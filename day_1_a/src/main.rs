@@ -9,27 +9,27 @@ fn main() {
     let contents = fs::read_to_string(file_path)
                             .expect("Unable to read the files");
 
-    let mut listOne: Vec<i32> = Vec::new();
-    let mut listTwo: Vec<i32> = Vec::new();
+    let mut list_one: Vec<i32> = Vec::new();
+    let mut list_tow: Vec<i32> = Vec::new();
 
     for lines in contents.lines(){
         let mut split_line = lines.split("   ");
         let val1 = split_line.next().expect("Failed to get get the first value");
         let val2 = split_line.next().expect("Failed to get get the first value");
         
-        listOne.push(val1.parse::<i32>().expect("value is not a valid number"));
-        listTwo.push(val2.parse::<i32>().expect("value is not a valid number"));
+        list_one.push(val1.parse::<i32>().expect("value is not a valid number"));
+        list_tow.push(val2.parse::<i32>().expect("value is not a valid number"));
     }
 
-    listOne.sort();
-    listTwo.sort();
+    list_one.sort();
+    list_tow.sort();
 
     let mut total = 0;
     
-    for i in 0..listOne.len()
+    for i in 0..list_one.len()
     {
-        let val1 = listOne[i];
-        let val2 = listTwo[i];
+        let val1 = list_one[i];
+        let val2 = list_tow[i];
         let mut distance = val1-val2;
         if distance < 0
         {
